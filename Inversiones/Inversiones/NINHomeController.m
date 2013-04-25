@@ -14,7 +14,7 @@
 #import "NINIndexController.h"
 #import "NINSettingController.h"
 #import "NINMutualFundsController.h"
-#import <QuartzCore/QuartzCore.h>
+#import <QuartzCore/QuartzCore.h> 
 
 @implementation NINHomeController
 @synthesize viewFlag;
