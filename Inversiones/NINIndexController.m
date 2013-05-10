@@ -341,11 +341,12 @@
     
     if(tableView == _tableStockChile){
     
-        NSString * strFloat  = [ cell.detailTextLabel.text = [[arrayIndexChileVar  objectAtIndex:indexPath.row] objectForKey:@"variacion"]stringByReplacingOccurrencesOfString:@"," withString:@"."];
+        NSString * strFloat  = [cell.detailTextLabel.text = [[arrayIndexChileVar  objectAtIndex:indexPath.row] objectForKey:@"variacion"]stringByReplacingOccurrencesOfString:@"," withString:@"."];
         CGFloat strFloatE = (CGFloat)[strFloat floatValue];
         BOOL *tipe = NULL;
         if (strFloatE>0)
             tipe=true;
+        
         CGRect varFrame = CGRectMake(290, 7, 80, 25);
         UILabel *albumLabel = [[UILabel alloc] initWithFrame:varFrame] ;
         albumLabel.backgroundColor = [UIColor whiteColor];
@@ -353,7 +354,7 @@
         albumLabel.highlightedTextColor = [UIColor whiteColor];
         albumLabel.text = cell.detailTextLabel.text = [[arrayIndexChileVar  objectAtIndex:indexPath.row] objectForKey:@"variacion"];
         if (tipe)
-            albumLabel.textColor = [UIColor blackColor];
+            albumLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         else
             albumLabel.textColor = [[UIColor alloc] initWithRed:146/255.f green:30/255.f blue:42/255.f alpha:1.0];
         [cell.contentView addSubview:albumLabel];
@@ -371,8 +372,11 @@
         songLabel.font = [UIFont systemFontOfSize:13];
         songLabel.highlightedTextColor = [UIColor whiteColor];
         songLabel.text = newString;
-        songLabel.textColor = [UIColor blackColor];
         songLabel.textAlignment = NSTextAlignmentRight;
+        if (tipe)
+            songLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
+        else
+            songLabel.textColor = [[UIColor alloc] initWithRed:146/255.f green:30/255.f blue:42/255.f alpha:1.0];
         [cell.contentView addSubview:songLabel];
          
         CGRect artistFrame = CGRectMake(10, 7, 150, 25);
@@ -402,17 +406,7 @@
         [formatter setMinimumFractionDigits:2];
         [formatter setMaximumFractionDigits:2];// Set this if you need 2 digits
         NSString * newString =  [formatter stringFromNumber:[NSNumber numberWithFloat:[number floatValue]]];;
-       
-        CGRect songFrame = CGRectMake(180, 7, 70, 25);
-        UILabel *songLabel = [[UILabel alloc] initWithFrame:songFrame];
-        songLabel.backgroundColor = [UIColor whiteColor];
-        songLabel.font = [UIFont systemFontOfSize:13];
-        songLabel.highlightedTextColor = [UIColor whiteColor];
-        songLabel.text = newString;
-        songLabel.textAlignment = NSTextAlignmentRight;
-        songLabel.textColor = [UIColor blackColor];
-        
-        [cell.contentView addSubview:songLabel];
+
         
         NSString *strFloat  = [[[arrayIndexGlobalVar objectAtIndex:indexPath.row] objectForKey:@"variacion_porcentaje"]stringByReplacingOccurrencesOfString:@"," withString:@"."];
         CGFloat strFloatE = (CGFloat)[strFloat floatValue];
@@ -431,11 +425,24 @@
         albumLabel.text = formattedNumber;
         albumLabel.textAlignment = NSTextAlignmentRight;
         if (tipe)
-            albumLabel.textColor = [UIColor blackColor];
+            albumLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         else
             albumLabel.textColor = [[UIColor alloc] initWithRed:146/255.f green:30/255.f blue:42/255.f alpha:1.0];
-        
         [cell.contentView addSubview:albumLabel];
+        
+        CGRect songFrame = CGRectMake(180, 7, 70, 25);
+        UILabel *songLabel = [[UILabel alloc] initWithFrame:songFrame];
+        songLabel.backgroundColor = [UIColor whiteColor];
+        songLabel.font = [UIFont systemFontOfSize:13];
+        songLabel.highlightedTextColor = [UIColor whiteColor];
+        songLabel.text = newString;
+        songLabel.textAlignment = NSTextAlignmentRight;
+        if (tipe)
+            songLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
+        else
+            songLabel.textColor = [[UIColor alloc] initWithRed:146/255.f green:30/255.f blue:42/255.f alpha:1.0];
+        [cell.contentView addSubview:songLabel];
+
         
         CGRect albumFrame = CGRectMake(140, 12, 20, 14);
         self.viewFlag = [[UIImageView alloc] initWithFrame:albumFrame];
@@ -486,8 +493,6 @@
         artistLabel.text = [[arrayMoneyName  objectAtIndex:indexPath.row] objectForKey:@"nemotecnico"];
         [cell.contentView addSubview:artistLabel];
         
-       
-        
         NSString *number = [[[arrayMoneyValue  objectAtIndex:indexPath.row] objectForKey:@"pesos_moneda"]stringByReplacingOccurrencesOfString:@"," withString:@"."];
         NSNumberFormatter * formatter = [NSNumberFormatter new];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -516,7 +521,6 @@
         albumLab.highlightedTextColor = [UIColor whiteColor];
         albumLab.text = formattedNumber;
         [cell.contentView addSubview:albumLab];
-        
     }
     
     if(tableView == _tableUf){
@@ -699,9 +703,9 @@
 -(IBAction)changeViewRecomendation:(id)sender{
     NINActionsController *viewRecomendation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     } else {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     }
     viewRecomendation.modalPresentationStyle = UIModalPresentationFullScreen;
     viewRecomendation.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

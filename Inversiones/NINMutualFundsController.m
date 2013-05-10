@@ -491,7 +491,7 @@
         albumLabel.font = [UIFont systemFontOfSize:13];
         albumLabel.highlightedTextColor = [UIColor whiteColor];
         albumLabel.text = formattedNumber;
-        albumLabel.textColor = [UIColor blackColor];
+        albumLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         albumLabel.textAlignment = NSTextAlignmentRight;
         
         [cell.contentView addSubview:albumLabel];
@@ -557,7 +557,7 @@
         albumLabel.highlightedTextColor = [UIColor whiteColor];
         albumLabel.text = formattedNumber;
         albumLabel.textAlignment = NSTextAlignmentRight;
-        albumLabel.textColor = [UIColor blackColor];
+        albumLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         [cell.contentView addSubview:albumLabel];
         
         NSString *number = [[arrayFundsInvestmentsWinPatrimonyAux objectAtIndex:indexPath.row]stringByReplacingOccurrencesOfString:@"," withString:@"."];
@@ -573,7 +573,7 @@
         labelPatrimony.highlightedTextColor = [UIColor whiteColor];
         labelPatrimony.text = newString;
         labelPatrimony.textAlignment = NSTextAlignmentRight;
-        labelPatrimony.textColor = [UIColor blackColor];
+        labelPatrimony.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         [cell.contentView addSubview:labelPatrimony];
     }
     
@@ -655,7 +655,7 @@
         labelShareTopValue.highlightedTextColor = [UIColor whiteColor];
         labelShareTopValue.text = formattedNumber;
         labelShareTopValue.textAlignment = NSTextAlignmentRight;
-        labelShareTopValue.textColor = [UIColor blackColor];
+        labelShareTopValue.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         [cell.contentView addSubview:labelShareTopValue];
         
         NSString *number = [[arrayFundsSeriesWinCuotaPatrimonyAux objectAtIndex:indexPath.row]stringByReplacingOccurrencesOfString:@"," withString:@"."];
@@ -671,7 +671,7 @@
         labelSeriesPatrimony.highlightedTextColor = [UIColor whiteColor];
         labelSeriesPatrimony.text = newString;
         labelSeriesPatrimony.textAlignment = NSTextAlignmentRight;
-        labelSeriesPatrimony.textColor = [UIColor blackColor];
+        labelSeriesPatrimony.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
         [cell.contentView addSubview:labelSeriesPatrimony];
     }
     
@@ -767,9 +767,9 @@
 -(IBAction)changeViewRecomendation:(id)sender{
     NINActionsController *viewRecomendation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     } else {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     }
     viewRecomendation.modalPresentationStyle = UIModalPresentationFullScreen;
     viewRecomendation.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

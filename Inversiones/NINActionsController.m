@@ -264,11 +264,12 @@
         CGRect songFrame = CGRectMake(160, 15, 80, 10);
         UILabel *songLabel = [[UILabel alloc] initWithFrame:songFrame];
         songLabel.backgroundColor = [UIColor whiteColor];
-        songLabel.font = [UIFont italicSystemFontOfSize:10];
+        songLabel.font = [UIFont boldSystemFontOfSize:12];
         songLabel.highlightedTextColor = [UIColor clearColor];
         songLabel.text = [[arrayRecomendationMnemonic objectAtIndex:indexPath.row]objectForKey:@"Nemo"];
-        songLabel.textAlignment = NSTextAlignmentCenter;
-        songLabel.textColor = [UIColor grayColor];
+        songLabel.textAlignment = NSTextAlignmentLeft;
+        songLabel.textColor = [[UIColor alloc] initWithRed:146/255.f green:30/255.f blue:42/255.f alpha:1.0];
+    
         [cell.contentView addSubview:songLabel];
         
         CGRect albumFrame = CGRectMake(250, 15, 80, 10);
@@ -301,14 +302,32 @@
         [cell.contentView addSubview:priceTargeLabel];
         
         
-        CGRect estimatedFrame = CGRectMake(550, 15, 70, 10);
+        NSString *strFloat  = [[[arrayRecomendationEstimated objectAtIndex:indexPath.row]objectForKey:@"Variacion"]stringByReplacingOccurrencesOfString:@"," withString:@"."];
+        strFloat  = [strFloat stringByReplacingOccurrencesOfString:@"%" withString:@""];
+        NSString *newString = [[strFloat componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+        NSNumberFormatter * formatter = [NSNumberFormatter new];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setMinimumFractionDigits:2];
+        [formatter setMaximumFractionDigits:2];
+        float newFloat =  [newString floatValue];
         
+        BOOL *tipe = NULL;
+        if (newFloat>0) {
+            tipe=true;
+        }
+        
+        CGRect estimatedFrame = CGRectMake(550, 15, 70, 10);
         UILabel *estimatedLabel = [[UILabel alloc] initWithFrame:estimatedFrame] ;
         estimatedLabel.backgroundColor = [UIColor whiteColor];
         estimatedLabel.font = [UIFont systemFontOfSize:12];
         estimatedLabel.highlightedTextColor = [UIColor clearColor];
         estimatedLabel.textAlignment = NSTextAlignmentRight;
         estimatedLabel.text = [[arrayRecomendationEstimated objectAtIndex:indexPath.row]objectForKey:@"Variacion"];
+        if (tipe)
+            estimatedLabel.textColor = [[UIColor alloc] initWithRed:100/255.f green:150/255.f blue:0/255.f alpha:1.0];
+        else
+            estimatedLabel.textColor = [[UIColor alloc] initWithRed:146/255.f green:30/255.f blue:42/255.f alpha:1.0];
+
         [cell.contentView addSubview:estimatedLabel];
         
         
@@ -643,12 +662,10 @@
     if((_tableFilterEmpresa.alpha == 1))
         [UIView animateWithDuration:0.1 animations:^{ _tableFilterEmpresa.alpha = 0; _arrowEmpresa.alpha = 0; }];
 
-    
 }
 
 - (IBAction) hideFilterEmpresa:(id)sender{
 
-    
     [UIView animateWithDuration:0.2 animations:^{ _buttonLast.alpha = 1; _buttonLast.alpha = 1; }];
     [UIView animateWithDuration:0.2 animations:^{ _buttonUpgrades.alpha = 1; _buttonUpgrades.alpha = 1; }];
     [UIView animateWithDuration:0.2 animations:^{ _buttonDowgrade.alpha = 1; _buttonDowgrade.alpha = 1; }];

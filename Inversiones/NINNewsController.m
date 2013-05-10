@@ -65,6 +65,10 @@
             }else{
                 if(stateNews == 2){
                     [self performSelector:@selector(showingNewsSinthesis) withObject:nil afterDelay:0.1f];
+                }else{
+                    if(stateNews == 3){
+                        [self performSelector:@selector(showingNewsNotification) withObject:nil afterDelay:0.1f];
+                    }
                 }
             }
         }
@@ -490,9 +494,9 @@ int subtract (int a)
 -(IBAction)changeViewRecomendation:(id)sender{
     NINActionsController *viewRecomendation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     } else {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     }
     viewRecomendation.modalPresentationStyle = UIModalPresentationFullScreen;
     viewRecomendation.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

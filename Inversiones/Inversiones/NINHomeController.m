@@ -826,9 +826,9 @@
 -(IBAction)changeViewRecomendation:(id)sender{
     NINActionsController *viewRecomendation;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     } else {
-        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsView_iPad" bundle:nil];
+        viewRecomendation =[[NINActionsController alloc] initWithNibName:@"NINActionsController" bundle:nil];
     }
     viewRecomendation.modalPresentationStyle = UIModalPresentationFullScreen;
     viewRecomendation.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
