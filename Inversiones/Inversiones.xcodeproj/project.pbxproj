@@ -27,6 +27,13 @@
 		0C88B5C416AECAA100D7BB36 /* NINIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C88B5C316AECAA100D7BB36 /* NINIndexController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc\" (Wihout the quotes)"; }; };
 		0C8A791C172071BF00AA7468 /* backgroundLoanding.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A791B172071BE00AA7468 /* backgroundLoanding.png */; };
 		0C8B506C1726F8390036C1DE /* adelante.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8B506B1726F8370036C1DE /* adelante.png */; };
+		0C8D75EC1741292000F3B89E /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 0C8D75EB1741292000F3B89E /* style.css */; };
+		0C8D75EF17412B6700F3B89E /* script.js in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D75EE17412B6700F3B89E /* script.js */; };
+		0C8D75F317416B6E00F3B89E /* jquery.co.js in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D75F217416B6E00F3B89E /* jquery.co.js */; };
+		0C8D75F517416BA600F3B89E /* jquery.colu_m.js in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D75F417416BA600F3B89E /* jquery.colu_m.js */; };
+		0C8D75F717416BC900F3B89E /* jquery.tab_so_f.js in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D75F617416BC900F3B89E /* jquery.tab_so_f.js */; };
+		0C8D75F917416BF000F3B89E /* jquery.tips.js in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D75F817416BF000F3B89E /* jquery.tips.js */; };
+		0C8D75FB17416C1200F3B89E /* tabl_01.js in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D75FA17416C1200F3B89E /* tabl_01.js */; };
 		0C8E990316D3B65200046A70 /* Sintesis.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8E990216D3B65200046A70 /* Sintesis.png */; };
 		0C8E990A16D5679400046A70 /* icono_inversiones_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8E990916D5679400046A70 /* icono_inversiones_72.png */; };
 		0C8E990C16D5679900046A70 /* icono_inversiones_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C8E990B16D5679900046A70 /* icono_inversiones_144.png */; };
@@ -123,6 +130,13 @@
 		0C88B5C316AECAA100D7BB36 /* NINIndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NINIndexController.m; path = ../NINIndexController.m; sourceTree = "<group>"; };
 		0C8A791B172071BE00AA7468 /* backgroundLoanding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundLoanding.png; sourceTree = "<group>"; };
 		0C8B506B1726F8370036C1DE /* adelante.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adelante.png; sourceTree = "<group>"; };
+		0C8D75EB1741292000F3B89E /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		0C8D75EE17412B6700F3B89E /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		0C8D75F217416B6E00F3B89E /* jquery.co.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.co.js; sourceTree = "<group>"; };
+		0C8D75F417416BA600F3B89E /* jquery.colu_m.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.colu_m.js; sourceTree = "<group>"; };
+		0C8D75F617416BC900F3B89E /* jquery.tab_so_f.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.tab_so_f.js; sourceTree = "<group>"; };
+		0C8D75F817416BF000F3B89E /* jquery.tips.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jquery.tips.js; path = ../../jquery.tips.js; sourceTree = "<group>"; };
+		0C8D75FA17416C1200F3B89E /* tabl_01.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tabl_01.js; sourceTree = "<group>"; };
 		0C8E990216D3B65200046A70 /* Sintesis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sintesis.png; sourceTree = "<group>"; };
 		0C8E990916D5679400046A70 /* icono_inversiones_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icono_inversiones_72.png; path = ../icono_inversiones_72.png; sourceTree = "<group>"; };
 		0C8E990B16D5679900046A70 /* icono_inversiones_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icono_inversiones_144.png; path = ../icono_inversiones_144.png; sourceTree = "<group>"; };
@@ -215,7 +229,6 @@
 		0C00727716A9956200A2DF7B = {
 			isa = PBXGroup;
 			children = (
-				0C8D648116B6F9CD00FDD234 /* PopUp */,
 				0C00728C16A9956200A2DF7B /* Inversiones */,
 				0C00728516A9956200A2DF7B /* Frameworks */,
 				0C00728316A9956200A2DF7B /* Products */,
@@ -244,6 +257,8 @@
 		0C00728C16A9956200A2DF7B /* Inversiones */ = {
 			isa = PBXGroup;
 			children = (
+				0C8D75ED17412B4C00F3B89E /* js */,
+				0C8D75EA174128F200F3B89E /* css */,
 				0C0072B616A997E200A2DF7B /* Image */,
 				0C0072B516A997CC00A2DF7B /* Video */,
 				0C00729516A9956200A2DF7B /* NINAppDelegate.h */,
@@ -306,6 +321,7 @@
 		0C0072B616A997E200A2DF7B /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				0C8D648116B6F9CD00FDD234 /* PopUp */,
 				0CF7A5A2171C3B1300C4DA1A /* degrade_gris.png */,
 				0C8A791B172071BE00AA7468 /* backgroundLoanding.png */,
 				0C925A1516E9314800A3C742 /* Flags */,
@@ -368,6 +384,28 @@
 				0CCD590916DD025800939D75 /* push-ipad.png */,
 			);
 			name = PopUp;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0C8D75EA174128F200F3B89E /* css */ = {
+			isa = PBXGroup;
+			children = (
+				0C8D75EB1741292000F3B89E /* style.css */,
+			);
+			name = css;
+			sourceTree = "<group>";
+		};
+		0C8D75ED17412B4C00F3B89E /* js */ = {
+			isa = PBXGroup;
+			children = (
+				0C8D75EE17412B6700F3B89E /* script.js */,
+				0C8D75F217416B6E00F3B89E /* jquery.co.js */,
+				0C8D75F417416BA600F3B89E /* jquery.colu_m.js */,
+				0C8D75F617416BC900F3B89E /* jquery.tab_so_f.js */,
+				0C8D75F817416BF000F3B89E /* jquery.tips.js */,
+				0C8D75FA17416C1200F3B89E /* tabl_01.js */,
+			);
+			name = js;
 			sourceTree = "<group>";
 		};
 		0C8E990416D5676400046A70 /* App Icon */ = {
@@ -536,6 +574,7 @@
 				0C470CE3171F355800A9B89D /* images.jpeg in Resources */,
 				0C8A791C172071BF00AA7468 /* backgroundLoanding.png in Resources */,
 				0C8B506C1726F8390036C1DE /* adelante.png in Resources */,
+				0C8D75EC1741292000F3B89E /* style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +596,12 @@
 				0CD824F016B06E5800AB7277 /* NINMutualFundsController.m in Sources */,
 				0C8E991116D6689900046A70 /* NINAutentificacionController.m in Sources */,
 				0CDFBE2316F3591500A9C3A5 /* NINFundsSeriesController.m in Sources */,
+				0C8D75EF17412B6700F3B89E /* script.js in Sources */,
+				0C8D75F317416B6E00F3B89E /* jquery.co.js in Sources */,
+				0C8D75F517416BA600F3B89E /* jquery.colu_m.js in Sources */,
+				0C8D75F717416BC900F3B89E /* jquery.tab_so_f.js in Sources */,
+				0C8D75F917416BF000F3B89E /* jquery.tips.js in Sources */,
+				0C8D75FB17416C1200F3B89E /* tabl_01.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
