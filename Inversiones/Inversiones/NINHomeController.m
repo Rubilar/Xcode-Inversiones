@@ -884,4 +884,27 @@
     [self presentViewController:viewMutualFunds animated:NO  completion:nil];
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+-(IBAction)swipeGlobalUp:(id)sender{
+
+        [UIView animateWithDuration:1.0f animations:^{
+        [self.tableStockGlobal setCenter:CGPointMake(180.0, 80.0)];
+        }];
+        [UIView animateWithDuration:2.0f animations:^{  _tableStockGlobal.alpha = 1; }];
+
+}
+
+-(IBAction)swipeGlobalDown:(id)sender{
+    
+    [UIView animateWithDuration:1.0f animations:^{
+        [self.tableStockGlobal setCenter:CGPointMake(175.0, 300.0)];
+    }];
+    [UIView animateWithDuration:2.0f animations:^{  _tableStockGlobal.alpha = 0; }];
+    
+}
+
+
+
 @end
