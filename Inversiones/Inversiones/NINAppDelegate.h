@@ -23,7 +23,7 @@ extern NSString  *SettingsSuggestlKey;
 extern NSString  *SettingsIpsaKey;
 extern NSString  *SettingsRankingKey;
 extern NSString  *Rut;
-extern NSString  *css;
+extern NSString  *scriptText;
 extern NSString  *font;
 
 //array News

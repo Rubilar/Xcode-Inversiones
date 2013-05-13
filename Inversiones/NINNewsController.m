@@ -112,7 +112,7 @@
     [xmlDetailNews parse]; //inicializa la rutina de parse
     
     NSString *textFormat  =  formatText([[arrayNewsText objectAtIndex:0]objectForKey:@"Texto"]);
-    NSString *html =[NSString stringWithFormat:@"<html>%@<body><h1 class='titulo_nota'>%@</h1><br><div class='content_info_nota'><br><op><div class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",css,strTitle,textFormat];
+    NSString *html =[NSString stringWithFormat:@"<html><head><link rel='stylesheet' href='style.css'><script src='jquery-1.6.2.min.js'></script><script defer src='script.js'></script></head><body><h1 class='titulo_nota'>%@</h1><br><div class='content_info_nota'><br><op><div class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",strTitle,textFormat];
     
     [self.webView loadHTMLString:html baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     arrayNewsText = [[NSMutableArray alloc] init];
@@ -146,8 +146,9 @@
     NSString *strText       =[[arrayNewsText objectAtIndex:0]objectForKey:@"Texto"];
     NSString *textFormat  =  formatText(strText);
     
-    NSString  *html =[NSString stringWithFormat:@"<html>%@<body><div class='fecha_nota'>%@</div><h1 class='titulo_nota'>%@</h1><p class='bajada'></p><br><div class='content_info_nota'><br><op><div class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",css,dateFotmat,Titulo,textFormat];
+    NSString  *html =[NSString stringWithFormat:@"<html><head>%@<link rel='stylesheet' href='style.css'><script src='jquery-1.6.2.min.js'></script><script defer src='script.js'></script></head><body><div class='fecha_nota'>%@</div><h1 class='titulo_nota'>%@</h1><p class='bajada'></p><br><div class='content_info_nota'>%@<br><op><div class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",scriptText,dateFotmat,Titulo,font,textFormat];
     
+
     [self.webView loadHTMLString:html baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     arrayNewsText = [[NSMutableArray alloc] init];
     [self performSelector:@selector(stopLoanding) withObject:nil afterDelay:5.0f];
@@ -314,10 +315,10 @@
     NSMutableString *html;
     
     if(strUrlImg.length > 2)
-        html =[NSString stringWithFormat:@"<html>%@<body><div class='fecha_nota'>%@<br></div><h1 class='titulo_nota'>%@</h1><div style='clear:both; float: left; width: 400px;'> <img src='%@' alt='Slide'></div><div style='float:left; width: 250px; font-size:19px;'>%@</div><br><div class='content_info_nota'><br>%@<op><div id='p1' class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",css,dateFotmat,strTitle,strUrlImg,strDescription,font,textFormat];
+        html =[NSString stringWithFormat:@"<html><head>%@<link rel='stylesheet' href='style.css'><script src='jquery.co.js'></script><script src='jquery.colu_m.js'></script><script src='jquery.tab_so_f.js'></script><script src='jquery.tips.js'></script><script src='ctabl_01.js'></script><script src='script.js'></script></head><body><div class='fecha_nota'>%@<br></div><h1 class='titulo_nota'>%@</h1><div style='clear:both; float: left; width: 400px;'><img src='%@' alt='Slide'></div><div style='float:left; width: 250px; font-size:19px;'>%@</div><br><div class='content_info_nota'><br>%@<op><div id='p1' class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",scriptText,dateFotmat,strTitle,strUrlImg,strDescription,font,textFormat];
     else
-        html =[NSString stringWithFormat:@"<html>%@<body><div class='fecha_nota'>%@</div><h1 class='titulo_nota'>%@</h1><p class='bajada'>%@</p><br><div class='content_info_nota'><br><op><div class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",css,dateFotmat,strTitle,strDescription,textFormat];
-    
+        html =[NSString stringWithFormat:@"<html><head>%@<link rel='stylesheet' href='style.css'><script src='jquery.co.js'></script><script src='jquery.colu_m.js'></script><script src='jquery.tab_so_f.js'></script><script src='jquery.tips.js'></script><script src='ctabl_01.js'></script><script src='script.js'></script></head><body><div class='fecha_nota'>%@</div><h1 class='titulo_nota'>%@</h1><p class='bajada'>%@</p><br><div class='content_info_nota'>%@<br><op><div class='contenedor_txt_despliegue'>%@</div></op></div></body></html>",scriptText,dateFotmat,strTitle,strDescription,font,textFormat];
+
     [self.webView loadHTMLString:html baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     arrayNewsText = [[NSMutableArray alloc] init];
     [self performSelector:@selector(stopLoanding) withObject:nil afterDelay:4.0f];
@@ -440,14 +441,14 @@ int subtract (int a)
         indexNews = add(indexNews);
 
         [UIView animateWithDuration:0.2 animations:^{ _tableNews.alpha = 0;_imageArrow.image = [UIImage imageNamed: @""]; }];
-        [UIView animateWithDuration:2.0f animations:^{
+        [UIView animateWithDuration:1.0f animations:^{
             [self.viewNews setCenter:CGPointMake(-1000.0,480.0)];
         }];
         loanding.hidden = false;
         backgroundLoanding.hidden = false;
 
-        [self performSelector:@selector(viewClear) withObject:nil afterDelay:3.0f];
-        [self performSelector:@selector(nextNews) withObject:nil afterDelay:4.0f];
+        [self performSelector:@selector(viewClear) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(nextNews) withObject:nil afterDelay:1.0f];
     }
 }
 
@@ -455,14 +456,14 @@ int subtract (int a)
     if(indexNews>0){
         indexNews = subtract(indexNews);
         [UIView animateWithDuration:0.2 animations:^{ _tableNews.alpha = 0;_imageArrow.image = [UIImage imageNamed: @""]; }];
-        [UIView animateWithDuration:2.0f animations:^{
+        [UIView animateWithDuration:1.0f animations:^{
             [self.viewNews setCenter:CGPointMake(1300.0,480.0)];
         }];
         loanding.hidden = false;
         backgroundLoanding.hidden = false;
         
-        [self performSelector:@selector(viewClear) withObject:nil afterDelay:3.0f];
-        [self performSelector:@selector(nextNews) withObject:nil afterDelay:4.0f];
+        [self performSelector:@selector(viewClear) withObject:nil afterDelay:0.5f];
+        [self performSelector:@selector(nextNews) withObject:nil afterDelay:1.0f];
     }
 }
 
