@@ -272,13 +272,13 @@
     
         [cell.contentView addSubview:songLabel];
         
-        CGRect albumFrame = CGRectMake(250, 15, 80, 10);
+        CGRect albumFrame = CGRectMake(250, 15, 90, 10);
         UILabel *albumLabel = [[UILabel alloc] initWithFrame:albumFrame] ;
         albumLabel.backgroundColor = [UIColor whiteColor];
         albumLabel.font = [UIFont systemFontOfSize:10];
         albumLabel.highlightedTextColor = [UIColor clearColor];
         albumLabel.text = [[arrayRecomendationBrokerage objectAtIndex:indexPath.row]objectForKey:@"Corredora"];
-        albumLabel.textAlignment = NSTextAlignmentCenter;
+        albumLabel.textAlignment = NSTextAlignmentLeft;
         [cell.contentView addSubview:albumLabel];
         
         CGRect recommendationFrame = CGRectMake(340, 15, 90, 10);
@@ -392,109 +392,124 @@
         
         //Detalle de accion
         
-        UILabel *lableDate = [[UILabel alloc] initWithFrame:CGRectMake(20,8,280,30)];
+        UILabel *lableDate = [[UILabel alloc] initWithFrame:CGRectMake(10,8,280,30)];
         lableDate.text = [[arrayRecomendationDate objectAtIndex:indexPath.row]objectForKey:@"Fecha"];
         lableDate.textColor = [UIColor grayColor];
         lableDate.font = [UIFont systemFontOfSize:13];
         [popoverView addSubview:lableDate];
         
-        UILabel *lableCompany = [[UILabel alloc] initWithFrame:CGRectMake(20,40,300,30)];
-        lableCompany.text = @" Compañia";
-        lableCompany.font = [UIFont systemFontOfSize:13];
+        UILabel *lableCompany = [[UILabel alloc] initWithFrame:CGRectMake(10,40,300,30)];
+        lableCompany.text = @"  Compañia";
+        lableCompany.font = [UIFont boldSystemFontOfSize:13];
         lableCompany.textAlignment = NSTextAlignmentLeft;
         lableCompany.textColor = [UIColor blackColor];
         lableCompany.backgroundColor = [[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
         [popoverView addSubview:lableCompany];
         
         
-        UILabel *company = [[UILabel alloc] initWithFrame:CGRectMake(20,80,300,30)];
+        UILabel *company = [[UILabel alloc] initWithFrame:CGRectMake(10,70,300,30)];
         company.text = [[arrayRecomendationCompany objectAtIndex:indexPath.row]objectForKey:@"Empresa"];
         company.font = [UIFont systemFontOfSize:14];
         company.textAlignment = NSTextAlignmentLeft;
-        company.textColor = [UIColor grayColor];
+        company.textColor =  [[UIColor alloc] initWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.0];
         [popoverView addSubview:company];
         
-        UILabel *lableMnemonic = [[UILabel alloc] initWithFrame:CGRectMake(325,40,100,30)];
-        lableMnemonic.text = @" Nemotécnico";
+        UILabel *lableMnemonic = [[UILabel alloc] initWithFrame:CGRectMake(315,40,110,30)];
+        lableMnemonic.text = @"  Nemotécnico";
         lableMnemonic.textColor = [UIColor blackColor];
-        lableMnemonic.font = [UIFont systemFontOfSize:13];
+        lableMnemonic.font = [UIFont boldSystemFontOfSize:13];
         lableMnemonic.textAlignment = NSTextAlignmentLeft;
         lableMnemonic.backgroundColor = [[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
         [popoverView addSubview:lableMnemonic];
         
-        UILabel *nemonic = [[UILabel alloc] initWithFrame:CGRectMake(325,80,100,30)];
+        UILabel *nemonic = [[UILabel alloc] initWithFrame:CGRectMake(325,70,100,30)];
         nemonic.text = [[arrayRecomendationMnemonic objectAtIndex:indexPath.row]objectForKey:@"Nemo"];
-        nemonic.textColor = [UIColor blackColor];
         nemonic.font = [UIFont systemFontOfSize:14];
         nemonic.textAlignment = NSTextAlignmentLeft;
-        nemonic.textColor= [[UIColor alloc] initWithRed:100/255.f green:100/255.f blue:100/255.f alpha:1.0];
+        nemonic.textColor=  [[UIColor alloc] initWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.0];
         [popoverView addSubview:nemonic];
         
         UILabel *lableBrokerage = [[UILabel alloc] initWithFrame:CGRectMake(430,40,150,30)];
-        lableBrokerage.text = @" Corredora";
+        lableBrokerage.text = @"  Corredora";
         lableBrokerage.textColor = [UIColor blackColor];
         lableBrokerage.backgroundColor =[[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
-        lableBrokerage.font = [UIFont systemFontOfSize:13];
+        lableBrokerage.font = [UIFont boldSystemFontOfSize:13];
         lableBrokerage.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:lableBrokerage];
         
-        UILabel *brokerage = [[UILabel alloc] initWithFrame:CGRectMake(430,80,150,30)];
+        UILabel *brokerage = [[UILabel alloc] initWithFrame:CGRectMake(430,70,150,30)];
         brokerage.text = [[arrayRecomendationBrokerage objectAtIndex:indexPath.row]objectForKey:@"Corredora"];
-        brokerage.textColor = [UIColor blackColor];
         brokerage.font = [UIFont systemFontOfSize:13];
         brokerage.textAlignment = NSTextAlignmentLeft;
-        brokerage.textColor = [UIColor grayColor];
+        brokerage.textColor =  [[UIColor alloc] initWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.0];
         [popoverView addSubview:brokerage];
         
         
         //
         
-        UILabel *lableRecommendatio = [[UILabel alloc] initWithFrame:CGRectMake(10,140,120,30)];
+        UILabel *lableRecommendatio = [[UILabel alloc] initWithFrame:CGRectMake(10,140,140,30)];
         lableRecommendatio.backgroundColor = [[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
-        lableRecommendatio.text = @" Recomendación";
+        lableRecommendatio.text = @"  Recomendación";
         lableRecommendatio.textColor = [UIColor blackColor];
-        lableRecommendatio.font = [UIFont systemFontOfSize:13];
+        lableRecommendatio.font = [UIFont boldSystemFontOfSize:13];
         lableRecommendatio.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:lableRecommendatio];
         
-        UILabel *recommendation = [[UILabel alloc] initWithFrame:CGRectMake(10,170,120,30)];
+        UILabel *recommendation = [[UILabel alloc] initWithFrame:CGRectMake(10,170,140,30)];
         recommendation.text = [[arrayRecomendationRecommendation objectAtIndex:indexPath.row]objectForKey:@"Recomendacion"];
-        recommendation.textColor = [UIColor grayColor];
+        recommendation.textColor = [[UIColor alloc] initWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.0];
         recommendation.font = [UIFont systemFontOfSize:14];
         recommendation.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:recommendation];
         
         
-        UILabel *lableUpside = [[UILabel alloc] initWithFrame:CGRectMake(135,140,170,30)];
+        UILabel *lableUpside = [[UILabel alloc] initWithFrame:CGRectMake(155,140,190,30)];
         lableUpside.backgroundColor = [[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
-        lableUpside.text = @" Upside/Downside Estimado";
+        lableUpside.text = @"  Upside/Downside Estimado";
         lableUpside.textColor = [UIColor blackColor];
-        lableUpside.font = [UIFont systemFontOfSize:13];
+        lableUpside.font = [UIFont boldSystemFontOfSize:13];
         lableUpside.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:lableUpside];
         
-        UILabel *upside = [[UILabel alloc] initWithFrame:CGRectMake(135,170,170,30)];
+        UILabel *upside = [[UILabel alloc] initWithFrame:CGRectMake(155,170,170,30)];
         upside.text = [[arrayRecomendationEstimated objectAtIndex:indexPath.row]objectForKey:@"Variacion"];
-        upside.textColor = [UIColor grayColor];
+        upside.textColor = [[UIColor alloc] initWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.0];
         upside.font = [UIFont systemFontOfSize:14];
         upside.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:upside];
         
         
-        UILabel *priceTarget = [[UILabel alloc] initWithFrame:CGRectMake(310,140,190,30)];
+        UILabel *priceTarget = [[UILabel alloc] initWithFrame:CGRectMake(350,140,230,30)];
         priceTarget.backgroundColor = [[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
-        priceTarget.text = @" Precio objetivo";
+        priceTarget.text = @"  Precio objetivo";
         priceTarget.textColor = [UIColor blackColor];
-        priceTarget.font = [UIFont systemFontOfSize:13];
+        priceTarget.font = [UIFont boldSystemFontOfSize:13];
         priceTarget.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:priceTarget];
         
-        UILabel *lablePriceTarget = [[UILabel alloc] initWithFrame:CGRectMake(310,170,190,30)];
+        UILabel *lablePriceTarget = [[UILabel alloc] initWithFrame:CGRectMake(350,170,250,30)];
         lablePriceTarget.text = [[arrayRecomendationCurrentPrice objectAtIndex:indexPath.row]objectForKey:@"Precio"];
-        lablePriceTarget.textColor = [UIColor grayColor];
+        lablePriceTarget.textColor =  [[UIColor alloc] initWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.0];
         lablePriceTarget.font = [UIFont systemFontOfSize:14];
         lablePriceTarget.textAlignment = NSTextAlignmentLeft;
         [popoverView addSubview:lablePriceTarget];
+        
+        UILabel *lableAbstract = [[UILabel alloc] initWithFrame:CGRectMake(10,210,570,30)];
+        lableAbstract.backgroundColor = [[UIColor alloc] initWithRed:242/255.f green:242/255.f blue:242/255.f alpha:1.0];
+        lableAbstract.text = @"  Abstracto";
+        lableAbstract.textColor = [UIColor blackColor];
+        lableAbstract.font = [UIFont boldSystemFontOfSize:13];
+        lableAbstract.textAlignment = NSTextAlignmentLeft;
+        [popoverView addSubview:lableAbstract];
+        
+        /*
+        UILabel *abstract = [[UILabel alloc] initWithFrame:CGRectMake(155,170,170,30)];
+        abstract.text = [[arrayRecomendationEstimated objectAtIndex:indexPath.row]objectForKey:@"Variacion"];
+        abstract.textColor = [UIColor grayColor];
+        abstract.font = [UIFont systemFontOfSize:14];
+        abstract.textAlignment = NSTextAlignmentLeft;
+        [popoverView addSubview:abstract];
+        */
         
         popoverContent.view = popoverView;
         
